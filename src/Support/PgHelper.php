@@ -60,6 +60,10 @@ class PgHelper
             throw new \Exception('fromPgArray(): 1st argument must be a valide PostgreSQL one dimensional array string');
         }
 
+        if ($pgArray == '{}') {
+            return [];
+        }
+
         $result = str_getcsv(substr($pgArray, 1, -1));
 
         foreach ($result as &$value) {
