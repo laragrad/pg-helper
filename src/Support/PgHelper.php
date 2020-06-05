@@ -73,12 +73,15 @@ class PgHelper
             if ($castType) {
                 switch ($castType) {
                     case 'int':
+                    case 'integer':
                         $value = (int) $value;
                         break;
                     case 'float':
                         $value = (float) $value;
                         break;
                     case 'string':
+                    case 'text':
+                    case 'uuid':
                         $value = (string) $value;
                         break;
                     default:
