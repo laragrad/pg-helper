@@ -93,13 +93,13 @@ class PgHelper
     /**
      * Find whether the variable is PostgreSQL string
      *
-     * @param mixed $pgArray
+     * @param mixed $value
      * @return boolean
      */
-    public static function isPgArray($pgArray)
+    public static function isPgArray($value)
     {
-        if (is_string($pgArray)) {
-            if (strpos($pgArray, '{') === 0 || strlen($pgArray) == (strrpos($pgArray, '}') + 1)) {
+        if (is_string($value)) {
+            if (strpos($value, '{') === 0 || strlen($value) == (strrpos($value, '}') + 1)) {
                 return true;
             }
         }
