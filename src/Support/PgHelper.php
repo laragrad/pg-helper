@@ -53,7 +53,7 @@ class PgHelper
             }
         }
 
-        return '{' . implode(',', $value = null) . '}';
+        return '{' . implode(',', $value) . '}';
     }
 
     /**
