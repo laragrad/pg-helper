@@ -18,11 +18,11 @@ Converts 1-dimension PHP-array to Pg-array string
 
 Syntax:
 
-`toPgArray(array $arr) : string`
+`toPgArray(mixed $arr = null) : string`
 
 Arguments:
 
-* $arr - One dimentional PHP-array
+* **$value** - Converted value. It is required and can by array, integer, string or null.
 
 Returns a PostgreSQL array string.
 
@@ -33,12 +33,12 @@ Casts all array items into one of types 'string','int' or 'float' if it need.
 
 Syntax:
 
-`fromPgArray(string $pgArray, string $castType = null) : array`
+`fromPgArray(string|null $value, string|null $castType = null) : array|null`
 
 Arguments:
 
-* $pgArray - One dimentional PostgreSQL array string
-* $castType - Array items cast type. Enabled values are 'string','int' or 'float'.
+* **$value** - Converted value. It is required and must be one dimentional PostgreSQL array string or NULL.
+* **$castType** - Array items cast type. Cast type value must be one of next strings: 'string', 'text', 'uuid', 'int', 'integer', 'float'.
 
 Returns a PHP-array.
 
@@ -52,6 +52,6 @@ Syntax:
 
 Arguments:
 
-* $value - Testing value
+* **$value** - Testing value
 
 Returns TRUE if value is PostgreSQL one dimensional array string.
